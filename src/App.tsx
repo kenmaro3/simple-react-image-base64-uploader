@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
@@ -31,14 +30,14 @@ const App = () => {
       profile_photo_in_base64: base64
     }
     console.log("serialzed data", base64);
-    const res = axios.post('http://localhost:3005/s3_upload_test', params);
+    const res = axios.post('http://localhost:3001/s3_upload_test', params);
   }
 
   const handleFetch = async () => {
     const params = {
       user_id: 10
     }
-    const res = await axios.post('http://localhost:3005/s3_download_test', params);
+    const res = await axios.post('http://localhost:3001/s3_download_test', params);
     console.log(res);
 
     const base64 = res.data;
